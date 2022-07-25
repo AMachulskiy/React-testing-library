@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'airbnb',
@@ -44,5 +45,6 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'no-param-reassign': 'off',
+    'no-undef': 'off',
   },
 }
