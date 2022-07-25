@@ -13,6 +13,7 @@ describe('test navigation', () => {
       about: screen.getByTestId('link-about'),
       contact: screen.getByTestId('link-contact'),
       users: screen.getByTestId('link-users'),
+      counter: screen.getByTestId('link-counter'),
     }
     expect(screen.getByTestId('main-page')).toBeInTheDocument()
     await userEvent.click(link.about)
@@ -21,5 +22,7 @@ describe('test navigation', () => {
     expect(screen.getByTestId('contact-page')).toBeInTheDocument()
     await userEvent.click(link.users)
     expect(screen.getByTestId('users-page')).toBeInTheDocument()
+    await userEvent.click(link.counter)
+    expect(screen.getByTestId('counter-page')).toBeInTheDocument()
   })
 })

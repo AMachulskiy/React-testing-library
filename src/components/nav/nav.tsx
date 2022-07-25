@@ -17,6 +17,9 @@ const Nav: ReactFC = () => {
       <Link data-testid='link-users' to='/users'>
         Users
       </Link>
+      <Link data-testid='link-counter' to='/counter'>
+        Counter
+      </Link>
     </nav>
   )
 }
