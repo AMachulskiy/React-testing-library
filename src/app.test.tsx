@@ -8,8 +8,10 @@ configure({
 })
 
 describe('Test App', () => {
-  test('Render main page', () => {
+  beforeEach(() => {
     render(<App />)
+  })
+  test('Render main page', () => {
     const title = screen.getByTestId(/happy/i)
     expect(title).toBeInTheDocument()
     expect(title).toHaveAttribute('title', 'Happy')
@@ -19,12 +21,10 @@ describe('Test App', () => {
     })
   })
   test('Async findBy', async () => {
-    render(<App />)
     const stateElem = await screen.findByTestId('state-elem')
     expect(stateElem).toBeInTheDocument()
   })
   test('test events', () => {
-    render(<App />)
     const checkbox = screen.getByTestId('checkbox')
     const status = screen.getByTestId('checkbox-status')
     expect(status).toHaveTextContent('UnChecked')
@@ -33,12 +33,10 @@ describe('Test App', () => {
     expect(checkbox).toBeInTheDocument()
   })
   test('test snapshot', () => {
-    render(<App />)
     const input = screen.getByTestId('input')
     expect(input).toMatchSnapshot()
   })
   test('test userEvent', async () => {
-    render(<App />)
     const input = screen.getByTestId('input')
     expect(input).toMatchSnapshot()
     fireEvent.input(input, {
