@@ -2,8 +2,6 @@ import App from '@src/App'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
-import Nav from './nav'
 
 describe('test navigation', () => {
   test('site navigation', async () => {
